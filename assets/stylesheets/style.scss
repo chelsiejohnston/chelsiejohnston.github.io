@@ -1,0 +1,152 @@
+@import "bootstrap";
+// breakpoint mixins
+@mixin breakpoint($min: 0, $max: 0) {
+	$type: type-of($min);
+
+	@if $type == string {
+		@if $min == xs {
+			@media (min-width: 320px) { @content; }
+		}
+
+		@else if $min == sm {
+			@media (min-width: 768px) { @content; }
+		}
+
+		@else if $min == md {
+			@media (min-width: 992px) { @content; }
+		}
+
+		@else if $min == lg {
+			@media (min-width: 1200px) { @content; }
+		}
+	}
+
+	@else if $type == number {
+		
+		$query: "all" !default;
+		@if $min != 0 and $max != 0 { 
+			$query: "(min-width: #{$min}) and (max-width: #{$max})"; 
+		}
+		@else if $min != 0 and $max == 0 { 
+			$query: "(min-width: #{$min})"; 
+		}
+		@else if $min == 0 and $max != 0 { 
+			$query: "(max-width: #{$max})"; 
+		}
+		@media #{$query} { 
+			@content;
+		}
+	}
+	
+
+}
+
+* + * { margin-top: 1.618em; }
+
+.row > * { margin-top: 0; }
+
+body {
+	font-family: 'Nunito', sans-serif;
+	font-weight: 300;
+	line-height: 1.618em;
+}
+
+body a {
+	font-weight: 400;
+	color: darken(#666, 10%);
+	&:hover {
+		transition: all .25s ease;
+		text-decoration: none;
+	}
+}
+
+.center { text-align: center; }
+
+.margin { margin: 1.618em; }
+
+.no-margin { margin: 0; }
+
+.no-margin-bottom { margin-bottom: 0; }
+
+#top {
+	height: 100vh;
+	background-image: linear-gradient(180deg, #FFFFFF, #d7d7d7);
+}
+
+#intro {
+	color: #b2b2b2;
+	a {
+		color: #b2b2b2;
+		font-weight: 400;
+		&:hover {
+			color: #000;
+		}
+	}
+}
+
+#title { 
+	padding-top: 25vh;
+	padding-bottom: 25vh;
+	background-size: 50%;
+	background-position: center;
+	background-repeat: no-repeat;
+	@include breakpoint(sm) {
+		background-image: url("../assets/images/shape.png");
+	}
+}
+
+#title h1 {
+	font-size: 5em;
+	font-weight: 300;
+	mix-blend-mode: exclusion;
+	@include breakpoint(sm) {
+		color: #B2DBDE;
+	}
+}
+
+h2 { margin-bottom: 1.618em; }
+
+#middle,
+#bottom {
+	font-size: 18px;
+}
+
+#top, #middle, #bottom {
+	padding-top: 25vh;
+	padding-bottom: 25vh;
+}
+
+#top { padding-top: 0; }
+
+#middle-container { 
+	@include breakpoint(sm) {
+		background-image: url("../assets/images/chicago.jpg");
+		background-attachment: fixed;
+		background-blend-mode: color-dodge;
+		background-color: silver;
+		background-position: center 29%;
+	}
+}
+
+#middle {
+	color: darken(#666, 10%);
+	a {
+		color: black;
+		&:hover { color: #AD8842; }
+	}
+}
+
+#bottom {
+	font-size: 1.1em;
+	font-weight: 300;
+	background: #000f08;
+	color: darken(white, 5%);
+	a {
+		color: #B2DBDE;
+		&:hover { color: #31b096;}
+	}
+	ul, li { 
+		margin: 0;
+		padding: 0;
+		list-style-type: none; }
+}
