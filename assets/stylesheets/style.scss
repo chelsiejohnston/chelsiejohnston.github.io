@@ -111,9 +111,22 @@ h2 { margin-bottom: 1.618em; }
 	font-size: 18px;
 }
 
-#top, #middle, #bottom {
+#top, #middle {
 	padding-top: 25vh;
 	padding-bottom: 25vh;
+}
+
+#bottom {
+	font-size: 1.1em;
+	font-weight: 300;
+	background: #021f11;
+	color: #f2f2f2;
+	padding-top: 4vh;
+	padding-bottom: 9vh;
+
+	img {
+		border-radius: 100px;
+	}
 }
 
 #top { padding-top: 0; }
@@ -149,4 +162,4 @@ h2 { margin-bottom: 1.618em; }
 		margin: 0;
 		padding: 0;
 		list-style-type: none; }
-}
+	}

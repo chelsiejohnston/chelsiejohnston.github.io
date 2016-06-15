@@ -5867,7 +5867,7 @@ body a {
   mix-blend-mode: exclusion; }
   @media (min-width: 768px) {
     #title h1 {
-      color: #644646; } }
+      color: #B2DBDE; } }
 
 h2 {
   margin-bottom: 1.618em; }
@@ -5876,9 +5876,19 @@ h2 {
 #bottom {
   font-size: 18px; }
 
-#top, #middle, #bottom {
+#top, #middle {
   padding-top: 25vh;
   padding-bottom: 25vh; }
+
+#bottom {
+  font-size: 1.1em;
+  font-weight: 300;
+  background: #021f11;
+  color: #f2f2f2;
+  padding-top: 4vh;
+  padding-bottom: 9vh; }
+  #bottom img {
+    border-radius: 100px; }
 
 #top {
   padding-top: 0; }
